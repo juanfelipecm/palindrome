@@ -16,12 +16,6 @@ Array.prototype.last = function () {
 }
 
 
-// Reverses a String
-
-// function reverse(string) {
-//     return Array.from(string).reverse().join('');
-// }
-
 // Defines a Phrase Object
 
 function Phrase (content) {
@@ -32,7 +26,12 @@ function Phrase (content) {
     }
 
     this.procesado = function() {
-        return this.processor(this.content);
+        return this.letters().toLowerCase();
+    }
+
+    // Returns the letters in the content.
+    this.letters = function letters() {
+        return (this.content.match(/[a-z]/gi) || []).join("");   
     }
 
 // Returns true if palindrome, false otherwise.
